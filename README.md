@@ -8,4 +8,4 @@
 - uses http for serving html template
 - cluster for creating child instances
 - uses fs for path resolving and reading files
-- Serve files by stream
+- serve files by stream
