@@ -2,6 +2,7 @@ const getPageTemplate = (children) => {
   return `
     <html lang='en'>
       <head>
+        <meta charset="UTF-8">
         <title>Calculator</title>
         <link rel="shortcut icon" href="https://unsplash.com/photos/ZlllSguW5Ow" type="image/x-icon">
         <style>    

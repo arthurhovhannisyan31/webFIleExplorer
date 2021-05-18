@@ -1,20 +1,21 @@
+const { getSplitPath } = require('./pathSplit')
+const { checkAccessError } = require('./accessCheck')
 const { isRootFolder } = require('../helpers')
 const { getPathOption } = require('../helpers')
 const { getFolderList } = require('../helpers')
 const { pathValidator } = require('../helpers')
-const { getSplitPath } = require('../helpers')
 
-const getFolderElements = (path) => {
+const getFolderElements = async (path) => {
   const paths = [];
   const [base, current] = getSplitPath(path);
-
+  const accessError = await checkAccessError(path);
   const error = pathValidator(path);
-  if (error) {
+  if (error || accessError) {
     return {
       paths: getFolderList("/").map((folderOption) =>
         getPathOption(`/${folderOption}`, folderOption)
       ),
-      error,
+      error: error || accessError,
     };
   }
 

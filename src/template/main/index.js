@@ -3,8 +3,8 @@ const { getFolderElements } = require('../../utils/helpers/folderReader')
 const { getErrorTemplate } = require('../../template/error')
 const { getPageTemplate } = require("../../template/page");
 
-const getMainTemplate = (url, res) => {
-  const { paths, error } = getFolderElements(url);
+const getMainTemplate = async (url, res) => {
+  const { paths, error } = await getFolderElements(url);
   res.end(
     getPageTemplate(`
       <div>

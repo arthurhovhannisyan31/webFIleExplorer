@@ -11,8 +11,8 @@ if (cluster.isMaster) {
   }
 } else {
   const reqMethodHandlersMap = {
-    GET: (req, res) => {
-      resolvePath(getNormalizedUrlString(req.url), res);
+    GET: async (req, res) => {
+      await resolvePath(getNormalizedUrlString(req.url), res);
     },
     default: () => {
       res.end()

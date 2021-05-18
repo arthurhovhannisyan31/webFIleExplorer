@@ -9,3 +9,6 @@
 - cluster for creating child instances
 - uses fs for path resolving and reading files
 - serve files by stream
+
+### Install dependencies yarn|npm install
+### Please start using yarn|npm start
