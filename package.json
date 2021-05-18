@@ -1,0 +1,12 @@
+{
+  "name": "web-file-explorer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "mime-types": "^2.1.30"
+  }
+}
