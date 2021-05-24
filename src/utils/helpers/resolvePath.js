@@ -1,4 +1,4 @@
-const { getMainTemplate } = require('../../template/main')
+const { getContentTemplate } = require('../../template/content')
 const { isFile, isDirectory, pathValidator } = require('./')
 const { fileReader } = require('./fileReader')
 
@@ -6,7 +6,7 @@ const resolvePath = async (url, res) => {
   const error = await pathValidator(url);
   const newUrl = error ? '/' : url;
   if (isDirectory(newUrl)) {
-    await getMainTemplate(url, res);
+    await getContentTemplate(url, res);
     return;
   }
   if (isFile(url)) {
